@@ -1,0 +1,81 @@
+SOURABH SHARMA
+
+Chrome - aws free tier
+EC2 - Elastic compute cloud
+EC2/Instance- Launch instance(name - OrsProject4)
+quike start(ubantu)free/easy/commands se kaam ho jata hai
+version(22)
+create new key pair (PROJECT4) .pem ......now your key downloaded
+
+select allow both https,http servers
+launch instance
+Chrome- filezilla - download filezilla client (used to connecting )
+goto ec2/instance/ i-0de.....
+scroll down - security
+launch wizard- edit inbound rule 
+add rule 
+tcp (8080),0.0.00 ip
+same for another select MYSQL/Aurora
+
+goto ec2
+click on instance id
+check that there is ubantu showing
+ and connect
+command - sudo su    .............super user
+sudo apt upadte
+apt install openjdk-11-jdk
+y
+apt install tomcat9
+apt install mysql-server
+y
+sudo apt update
+chmod 777
+
+open filezila 
+open aws folder
+new site
+name(project04)
+protocal (sftp)
+port 22
+host - past ip
+logon type - key file
+user - ubantu
+key file - brows me all file select
+click on connect
+
+4th box ke 1st folder pe press karke 
+var/lib/tomcat9/webapps - copy path
+
+
+on terminal- 
+chmod 777 past path and enter
+
+create folder - aws4
+ors.war
+ors.pem
+ors.sql
+
+Filezila-
+ors.war - upload
+ors.sql - upload
+
+Terminal-
+mysql -u root -p
+root
+
+mysql> create database project4;
+use project4;
+goto filezilaa copy path
+source var/lib/tomcat9/webapps/project4.sql;
+show tables;
+
+create user "indore"@"%" identified by "indore123";
+
+grant all privileges on *.* to "root"@"%" with grant option;
+flush privileges;
+show tables;
+
+aws- copy ip address
+chrome- past_path:8080/ORS_Project4/
+
+aws- terminate or stop instance

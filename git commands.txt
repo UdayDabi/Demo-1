@@ -1,0 +1,11 @@
+git commands
+
+global to local 
+ 
+git init
+git clone 
+
+local to global
+git add .
+git commit -m "done"
+git push
